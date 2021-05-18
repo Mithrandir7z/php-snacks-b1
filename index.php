@@ -103,20 +103,49 @@ Olimpia Milano - Cantù | 55-60
 
 
         // verificare
-        // che mail contenga un punto e una chiocciola e che age sia un numero.
+        // che mail contenga un punto e una chiocciola
 
-        $mailFlag = 0;
+        $mailFlag = false;
         var_dump($mailFlag);
 
         var_dump($mail);
 
-        if ( str_contains($mail, '@') ) {
+
+        if (strpos($mail, '@' ) !== false) {
 
             echo '@ è stata trovata';
-            $mailFlag = 1;
+
+            if (strpos($mail, '.' ) !== false) {
+
+                echo 'il punto . è stato trovato';
+    
+                
+                $mailFlag = true;
+            }
         }
 
         var_dump($mailFlag);
+
+
+        // verificare
+        // che age sia un numero.
+        var_dump($age);
+        $ageFlag = false;
+
+        if ( is_numeric($age) ) {
+
+            $ageFlag = true;
+        }
+
+
+        if ( $nameFlag && $mailFlag && $ageFlag ) {
+
+            echo 'Accesso riuscito';
+        } else {
+
+            echo 'Accesso negato';
+        }
+
     ?>
 
 
