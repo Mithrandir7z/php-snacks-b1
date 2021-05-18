@@ -85,6 +85,11 @@ Olimpia Milano - Cantù | 55-60
         $mail = $_GET['mail'];
         $age = $_GET['age'];
 
+
+
+        // verificare 
+        // che name sia più lungo di 3 caratteri, 
+
         $nameFlag = false;
 
         var_dump($name);
@@ -96,9 +101,22 @@ Olimpia Milano - Cantù | 55-60
 
         var_dump($nameFlag);
 
-        // if ( str_contains($mail, '@') ) {
 
-        // }
+        // verificare
+        // che mail contenga un punto e una chiocciola e che age sia un numero.
+
+        $mailFlag = 0;
+        var_dump($mailFlag);
+
+        var_dump($mail);
+
+        if ( str_contains($mail, '@') ) {
+
+            echo '@ è stata trovata';
+            $mailFlag = 1;
+        }
+
+        var_dump($mailFlag);
     ?>
 
 
