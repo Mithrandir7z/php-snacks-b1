@@ -58,12 +58,25 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato” 
             ],
         ];
 
-        var_dump($partite);
+        // var_dump($partite);
     ?>
 
-    <?php 
+    <h1>Match Oggi</h1>
 
-    ?>
+    <ul>
+        <?php for ($i = 0; $i < count($partite); $i++) { ?>
+        <?php $thisSquadra = $partite[$i]; ?>
+
+            <li>
+                <?php echo $thisSquadra['SquadraCasa'] ?> - <?php echo $thisSquadra['SquadraOspite'] ?> | <?php echo $thisSquadra['puntiSquadraCasa'] ?> - <?php echo $thisSquadra['puntiSquadraOspite'] ?> 
+            </li>
+
+        <?php } ?>
+    </ul>
+
+   
+
+   <!--snack 2-->
 
 </body>
 </html>
